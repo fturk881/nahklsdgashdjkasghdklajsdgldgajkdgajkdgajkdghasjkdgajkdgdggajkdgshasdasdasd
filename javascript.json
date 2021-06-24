@@ -1,0 +1,36 @@
+[
+    {
+        "kodlar": {
+            "v11 - Anti Raid": {
+                "isim": "v11 - Anti Raid",
+                "id": "wtqZ6z5axs",
+                "desc": "Bot Eklenmesini Engeller",
+                "modules": [
+                    "quick.db",
+                    " Dİscord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/761945664447840256/a9adaf0c6be9646997659244b61e39fa.png",
+                "main_code": "client.on(\"guildMemberAdd\", async member => {\r\n  let kanal = await db.fetch(`botkorumakanal_${member.guild.id}`);\r\n  if (!kanal) return;\r\n      const kanaliste = client.channels.get(kanal) \r\n      if (!kanaliste) return\r\n  if (member.user.bot == true) {\r\n  kanaliste.send(\"**\" + member.user.username + \"** adlı botu güvenlik amacı ile uzaklaştırdım.**\")\r\n  member.ban()\r\n  }\r\n});",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = (client, message, args) => { \r\n\r\nif (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(` Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n  \r\n  const sec = args[0]  \r\n\r\nif (!sec) {\r\n  return message.reply(`Anti Raid Bot Sistemi Nedir?\r\nEğer Açarsanız Sunucu Sahibinin İzni Olmadan Sunucuya Başka Bot Sokmaz. Giren Botlar Otomatik Atılır.\r\nÖrnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\`\r\n`)\r\n}\r\n  \r\n  if (sec == \"aç\") {\r\n    const kanal = message.mentions.channels.first()\r\n  if (!kanal) {\r\n    return message.reply(`Anti Raid Bot Sistemi Örnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\``)\r\n  }\r\n    db.set(`botkorumakanal_${message.guild.id}`, kanal.id)\r\n    return message.channel.send(`Kayıt Kanalını ${kanal} Olarak Ayarladım.`)\r\n \r\n    \r\n  }\r\n  \r\n    if (sec == \"kapat\") {\r\n    const kanal = message.mentions.roles.first()\r\n \r\n    db.delete(`botkorumakanal_${message.guild.id}`)\r\n    return message.channel.send(` Kayıt Kanalını Başarıyla Kapattım.`)\r\n    \r\n  }\r\n};\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: ['antiraidbotsistemi'], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'anti-raid-bot-sistemi',\r\n  description: 'Bot Engel Sistemini Açar Kapatır', \r\n  usage: '!anti-raid-bot-sistemi aç #kanal'\r\n};",
+                "kod_rank": "javascript",
+                "k_adi": "Ludex",
+                "date": "6/20/2021"
+            },
+            "v12 - Anti Raid": {
+                "isim": "v12 - Anti Raid",
+                "id": "XD7MZevfww",
+                "desc": "Bot Eklenmesini Engeller",
+                "modules": [
+                    "quick.db",
+                    " Dİscord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/761945664447840256/a9adaf0c6be9646997659244b61e39fa.png",
+                "main_code": "client.on(\"guildMemberAdd\", async member => {\r\n  let kanal = await db.fetch(`botkorumakanal_${member.guild.id}`);\r\n  if (!kanal) return;\r\n      const kanaliste = client.channels.cache.get(kanal) \r\n      if (!kanaliste) return\r\n  if (member.user.bot == true) {\r\n  kanaliste.send(\"**\" + member.user.username + \"** adlı botu güvenlik amacı ile uzaklaştırdım.**\")\r\n  member.members.ban()\r\n  }\r\n});",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = (client, message, args) => { \r\n\r\nif (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(` Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n  \r\n  const sec = args[0]  \r\n\r\nif (!sec) {\r\n  return message.reply(`Anti Raid Bot Sistemi Nedir?\r\nEğer Açarsanız Sunucu Sahibinin İzni Olmadan Sunucuya Başka Bot Sokmaz. Giren Botlar Otomatik Atılır.\r\nÖrnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\`\r\n`)\r\n}\r\n  \r\n  if (sec == \"aç\") {\r\n    const kanal = message.mentions.channels.first()\r\n  if (!kanal) {\r\n    return message.reply(`Anti Raid Bot Sistemi Örnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\``)\r\n  }\r\n    db.set(`botkorumakanal_${message.guild.id}`, kanal.id)\r\n    return message.channel.send(`Kayıt Kanalını ${kanal} Olarak Ayarladım.`)\r\n \r\n    \r\n  }\r\n  \r\n    if (sec == \"kapat\") {\r\n    const kanal = message.mentions.roles.first()\r\n \r\n    db.delete(`botkorumakanal_${message.guild.id}`)\r\n    return message.channel.send(` Kayıt Kanalını Başarıyla Kapattım.`)\r\n    \r\n  }\r\n};\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: ['antiraidbotsistemi'], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'anti-raid-bot-sistemi',\r\n  description: 'Bot Engel Sistemini Açar Kapatır', \r\n  usage: '!anti-raid-bot-sistemi aç #kanal'\r\n};",
+                "kod_rank": "javascript",
+                "k_adi": "Ludex",
+                "date": "6/20/2021"
+            }
+        }
+    }
+]

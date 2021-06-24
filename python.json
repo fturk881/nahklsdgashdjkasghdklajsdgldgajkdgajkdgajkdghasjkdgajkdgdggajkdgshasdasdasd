@@ -1,0 +1,18 @@
+[
+  {
+    "kodlar": {
+      "ÖRNEK": {
+        "isim": "ÖRNEK",
+        "id": "j9oX2FLQND",
+        "desc": "ÖRNEK",
+        "modules": ["ÖRNEK"],
+        "icon": "https://cdn.discordapp.com/avatars/761945664447840256/a9adaf0c6be9646997659244b61e39fa.png",
+        "main_code": "ÖRNEK",
+        "komutlar_code": "ÖRNEK",
+        "kod_rank": "python",
+        "k_adi": "Ludex",
+        "date": "6/19/2021"
+      }
+    }
+  }
+]

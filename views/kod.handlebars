@@ -1,0 +1,54 @@
+<style>
+.avatar {
+  border-radius: 5% !important;  
+  border: 2px solid white;
+  padding: 1px;
+}
+#avatar2 {
+    width: 5px;
+    height: 5px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    text-align:center;
+}
+    #avatar2:hover {g
+        transform: translate(0px,-20px);
+        -webkit-transform: translate(0px,-20px);
+	}
+  </style>
+<title>Ludex Code | {{kod.isim}}</title>
+<main>
+  <br><br><br>
+
+
+  <center>
+  <br>
+  	<img class="sunucusresmi" height="200" width="200" src="https://i.pinimg.com/originals/4c/b0/51/4cb05145f3476b858b06776b696136d8.gif">
+  </center>
+  
+  <hr/>
+  
+  <center>   <b>{{kod.isim}}</title></b> </center>
+
+  <hr/>
+
+  <pre class="kodyazirengi">
+    <code>{{kod.main_code}}</code>
+  </pre>
+  <code id="code_main" hidden>{{kod.main_code}}</code>
+  <!-- <button type="button" class="btn btn-outline-success btn-lg btn-block" style="margin: 1rem;" id="copy_main">Kodu Kopyala</button> -->
+
+<hr/>
+
+  <center><p class="h5"></p></center>
+  <pre class="kodyazirengi">
+    <code>{{kod.komutlar_code}}</code>
+  </pre>
+<code id="code_komutlar" hidden>{{kod.komutlar_code}}</code>
+<!-- <button type="button" class="btn btn-outline-success btn-lg btn-block" style="margin: 1rem;" id="copy_komutlar">Kodu Kopyala</button> -->
+  <center><a href="/sil/{{kod.kod_rank}}/{{kod.id}}" style="margin: 1rem;">Kodu Sil</a></center>
+   
+
+
+
+</main>
